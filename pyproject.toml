@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scc-control-plane"
+version = "1.0.0"
+description = "Control Plane officiel de Seror Créative Core — couche de supervision et d'observabilité (réutilise l'API et le Runtime). Sans LLM, sans réseau, stdlib pur, déterministe."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+authors = [{ name = "Seror Créative" }]
+keywords = ["scc", "control-plane", "observability", "supervision", "monitoring"]
+dependencies = []
+
+[project.scripts]
+scc-control = "scc_control_plane.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
